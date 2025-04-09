@@ -15,7 +15,7 @@ int main() {
  
 
     printf("Estado(Uma Letra): ");
-    scanf("%c", &estado1);
+    scanf(" %c", &estado1);
     printf("Código(Estado+Número): ");
     scanf("%s", &codigo1);
     printf("Nome da Cidade: ");
@@ -84,22 +84,82 @@ int main() {
     printf("Nome da Cidade: %s\n", nome2);
     printf("População: %d\n", populacao2);  //Mostrando os valores digitados da segunda carta
     printf("Área: %.3f Km²\n", area2);
-    printf("PIB: %2.f\n", pib2);
+    printf("PIB: %.2f\n", pib2);
     printf("Pontos Turísticos: %d\n", pontos2);
     printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
-    printf("PIB Per Capital: %2.f Reais\n", PibCapital2);
+    printf("PIB Per Capital: %.2f Reais\n", PibCapital2);
     printf("SUPERPODER: %.3f\n", superpoder2);
 
     printf(" \n");
 
+    int escolha;
+
     printf("COMPARAÇÃO DE CARTAS:\n");
-    printf("População -> Carta 1 Venceu? -> %d\n", populacao1 > populacao2);
-    printf("Área -> Carta 1 Venceu? -> %d\n", area1 > area2);
-    printf("PIB -> Carta 1 Venceu? -> %d\n", pib1 > pib2);
-    printf("Pontos Turísticos -> Carta 1 Venceu? -> %d\n", pontos1 > pontos2);
-    printf("Densidade Populacional -> Carta 2 Venceu? -> %d\n", densidade1 > densidade2);  //Comprando as cartas
-    printf("PIB Per Capital -> Carta 1 Venceu? -> %d\n", PibCapital1 > PibCapital2);
-    printf("SUPERPODER -> Carta 1 Venceu? -> %d\n", superpoder1 > superpoder2);
+
+    printf("Escolha um Atributo para Comparar:\n1 = POPULAÇÃO\n2 = ÁREA\n3 = PIB\n4 = PONTOS TURÍSTICOS\n5 = DENSIDADE POPULACIONAL\n6 = PIB PER CAPITAL\n7 = SUPERPODER\nSua Escolha: \n");
+    scanf("%d", &escolha);
+
+    switch (escolha){                                                           //implementação do switch para o jogador conseguir escolher qual carta quer comparar
+        case 1:
+            if (populacao1 == populacao2){
+                printf("Ambos os atributos são iguais! Empate.\n");}
+            else if (populacao1 > populacao2){
+                printf("[POPULAÇÃO] Carta 1 Venceu!\n");}
+            else{
+                printf("[POPULAÇÃO] Carta 2 Venceu!\n");}
+            break;
+        case 2:
+            if (area1 == area2){
+                printf("Ambos os atributos são iguais! Empate.\n");}
+            else if (area1 > area2){
+                printf("[ÁREA] Carta 1 Venceu!\n");}
+            else{
+                printf("[ÁREA] Carta 2 Venceu!\n");}    
+            break;
+        case 3:
+            if (pib1 == pib2){
+                printf("Ambos os atributos são iguais! Empate.\n");}
+            if (pib1 > pib2){
+                printf("[PIB] Carta 1 Venceu!\n");}
+            else{
+                printf("[PIB] Carta 2 Venceu!\n");}
+            break;
+        case 4:
+            if (pontos1 == pontos2){
+                printf("Ambos os atributos são iguais! Empate.\n");}
+            if (pontos1 > pontos2){
+                printf("[PONTOS TURÍSTICOS] Carta 1 Venceu!\n");}
+            else{
+                printf("[PONTOS TURÍSTICOS] Carta 2 Venceu!\n");}
+            break;
+        case 5:
+            if (densidade1 == densidade2){
+                printf("Ambos os atributos são iguais! Empate.\n");}
+            if (densidade2 > densidade1){
+                printf("[DENSIDADE POPULACIONAL] Carta 1 Venceu!\n");}
+            else{
+                printf("[DENSIDADE POPULACIONAL] Carta 2 Venceu!\n");}
+            break;
+        case 6:
+            if (PibCapital1 == PibCapital2){
+                printf("Ambos os atributos são iguais! Empate.\n");}
+            if (PibCapital1 > PibCapital2){
+                printf("[PIB PER CAPITAL] Carta 1 Venceu!\n");}
+            else{
+                printf("[PIB PER CAPITAL] Carta 2 Venceu!\n");}
+            break;
+        case 7:
+            if (PibCapital1 == PibCapital2){
+                printf("Ambos os atributos são iguais! Empate.\n");}
+            if (superpoder1 > superpoder2){
+                printf("[SUPERPODER] Carta 1 Venceu!\n");}
+            else{
+                printf("[SUPERPODER] Carta 2 Venceu!\n");}
+            break;
+        default:
+            printf("Opção invalida!\n");
+            break;}
+
 
 
     return 0;
